@@ -1,0 +1,37 @@
+
+   18  cd CS131
+   19  mkdir ws2
+   20  cd ws2
+   22  echo $HOME
+   25  id
+   38  ls /proc/ 
+   39  ls /proc/ | grep mem
+   40  ls /proc/ | grep cpu
+   41  head /proc/meminfo
+   42  head /proc/cpuinfo
+   43  tail /proc/cpuinfo
+   44  cat /proc/cpuinfo
+   45  ls /etc/ 
+   46  ls /etc/ | grep release
+   47  cat /etc/os-release
+   48  echo "1) To create and change paths to ws2, I did mkdir ws2, then cd ws2, which then took me inside the ws2 directory" > ws2.txt
+   49  echo "2) My Home directory Path: " >> ws2.txt
+   50  echo $HOME
+   51  echo $HOME >> ws2.txt
+   52  echo "3) My User ID and groups: " >> ws2.txt
+   53  id >> ws2.txt
+   54  echo "4a) Info about Memory on my server: " >> ws2.txt
+   55  ls /proc/ | grep mem >> ws2.txt
+   56  echo "4b) File with CPU info:" >> ws2.txt
+   57  ls /proc/ | grep cpu >> ws2.txt
+   58  echo "5) Memory information in my file:" >> ws2.txt
+   59  head /proc/meminfo >> ws2.txt
+   60  echo "6) CPU information on my file:" >> ws2.txt
+   61  head /proc/cpuinfo >> ws2.txt
+   62  tail /proc/cpuinfo >> ws2.txt
+   63  cat /proc/cpuinfo >> ws2.txt
+   64  echo "7) Operating System  version: " >> ws2.txt
+   65  cat /etc/os-release >> ws2.txt
+   66  vim ws2.txt
+   67  ls
+   68  history > cmds.log

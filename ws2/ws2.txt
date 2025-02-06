@@ -1,0 +1,125 @@
+1) To create and change paths to ws2, I did mkdir ws2, then cd ws2, which then took me inside the ws2 directory
+
+2) (My Home directory Path) To find my home directory path, I used the command: "echo $HOME", which essentially accessed my Home environment variable. 
+Result:
+/home/sanjana_jagarlapudi
+
+3) (My User ID and groups) To find my UID and my user groups, I used command: "id". As seen below, my UID is 1001, and I belong to the groups: sanjana_jagarlapudi, adm, dialout, cdrom, floppy, audio, dip, video, plugdev, netdev, lxd, ubuntu, google-sudoers
+Result:
+uid=1001(sanjana_jagarlapudi) gid=1002(sanjana_jagarlapudi) groups=1002(sanjana_jagarlapudi),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd),1000(ubuntu),1001(google-sudoers)
+
+4a) (File with Memory Info) To find which file under directory /proc/ contains information about memory (mem) on my server, I first used the command "ls /proc/ " to look at the contents of the proc file. Then, I used the grep command to search for any files with the names "mem" in them, as they are the most likely to have info about memory: "ls /proc/ | grep mem" This command then returned two files, one of which was the one we were looking for (meminfo).
+Result:
+iomem
+meminfo
+
+4b) (File with CPU info) To find which file contains information about the CPUs on my server, I used the same technique as I used above. Using this ls and grep command: "ls /proc/ | grep cpu",  I was able to determine that the file is cpuinfo. 
+Result: 
+cpuinfo
+
+5) (Memory information in my file) By using this head command: "head /proc/meminfo", we can see that the total amount of memory on my server is 976904 kB.
+Result:
+MemTotal:         976904 kB
+MemFree:          407260 kB
+MemAvailable:     635764 kB
+Buffers:            2324 kB
+Cached:           347344 kB
+SwapCached:            0 kB
+Active:           175904 kB
+Inactive:         237648 kB
+Active(anon):        884 kB
+Inactive(anon):    72172 kB
+
+6) (CPU information on my file) By using all three of the head, tail and cat commands, we can tell that I have 1 processor on my server, my process architexture name is "Intel(R) Xeon(R) CPU @ 2.20GHz", and my proccessor speed is 2199.998 (used results from the cat command below)
+Result:
+Using head command on cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2199.998
+cache size	: 56320 KB
+physical id	: 0
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4399.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+Using tail command on cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2199.998
+cache size	: 56320 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4399.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+Using cat command on cpuinfo:
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2199.998
+cache size	: 56320 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4399.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+7) (My Operating System  version) To identify which file held info about the operating system, I used the command "ls /etc/". The os-release file contains information about my os version. Then, I used "ls /etc/ | grep release", to find the file, and then, to look into the contents of the file, I used "cat /etc/os-release". Upon looking into the file, we can see that my OS version is "20.04.6 LTS (Focal Fossa)".
+Result:
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
