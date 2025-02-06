@@ -30,7 +30,7 @@ Inactive:         237648 kB
 Active(anon):        884 kB
 Inactive(anon):    72172 kB
 
-6) (CPU information on my file) By using all three of the head, tail and cat commands, we can tell that I have 1 processor on my server, my process architexture name is "Intel(R) Xeon(R) CPU @ 2.20GHz", and my proccessor speed is 2199.998 (used results from the cat command below)
+6) (CPU information on my file) By using all three of the head, tail and cat commands, we can tell that I have 2 processors on my server, my process architexture name is "Intel(R) Xeon(R) CPU @ 2.20GHz", and my proccessor speed is 2199.998 (used results from the cat command below)
 Result:
 Using head command on cpuinfo:
 processor	: 0
