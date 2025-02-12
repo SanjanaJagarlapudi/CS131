@@ -1,0 +1,26 @@
+  122  sudo apt install python3-pip
+  123  pip install gdown
+  124  cd CS131
+  126  cd CS131
+  127  cd ws3
+  130  /home/sanjana_jagarlapudi/.local/bin/gdown 1fc3saVu2GtG3Rft3zI-VOOsZhaqcSyn3
+  142  grep '"2019-01-02' 2019-01-h1.csv > jan2.txt
+  143  head -3 jan2.txt
+  146  cut -d',' -f8 jan2.txt > jan2_pickup.txt
+  147  head -3 jan2_pickup.txt
+  148  sort jan2_pickup.txt | uniq -c | sort -nr > jan2_sorted.txt
+  149  head -3 jan2_sorted.txt
+  150  echo "Task 1: The Top 3 Pickup Locations on 2019-1-02:" > ws3.txt
+  152  cat ws3.txt
+  153  head -3 jan2_sorted.txt >> ws3.txt
+  154  cat ws3.txt
+  165  grep '"2019-01-10' 2019-01-h1.csv > jan10.txt
+  167  head -3 jan10.txt
+  168  cut -d ',' -f 8 jan10.txt > jan10_pickup.txt
+  169  head -3 jan10_pickup.txt
+  170  sort jan10_pickup.txt | uniq -c | sort -nr > jan10_sorted.txt
+  171  head -3 jan10_sorted.txt
+  172  echo "Task 2) The Top 3 Pickup Locations on 2019-1-10:" >> ws3.txt
+  173  head -3 jan10_sorted.txt >> ws3.txt
+  174  cat ws3.txt
+  175  history > cmds.log
