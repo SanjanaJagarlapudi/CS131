@@ -1,0 +1,33 @@
+Task 1c: 
+Output of 'l' command
+total 439624
+-rw-rw-r-- 1 sanjana_jagarlapudi sanjana_jagarlapudi 450156048 Jan 19 07:24 2019-01-h1.csv
+drwxrwxr-x 2 sanjana_jagarlapudi sanjana_jagarlapudi      4096 Feb 17 20:47 FARE
+-rw-rw-r-- 1 sanjana_jagarlapudi sanjana_jagarlapudi      1066 Feb 17 22:49 cmds.log
+-rw-rw-r-- 1 sanjana_jagarlapudi sanjana_jagarlapudi       456 Feb 17 22:57 a1.txt
+
+ Output of 'w' command
+      5      38     353
+
+
+2c) Mean Fair Amounts
+The average of 151.0-239.0.txt:
+6.64491942703670546105
+The average of 163.0-229.0.txt:
+7.05010395010395010395
+
+2d) The highest total amount paid by customers who were picked up on January 10, 2019:
+36090.3
+
+2e)The 10 most popular dropoff locations in the dataset.
+ 158025 236.0
+ 140655 161.0
+ 137764 237.0
+ 114146 170.0
+ 110764 162.0
+ 110641 230.0
+ 102202 142.0
+ 100132 48.0
+  96839 239.0
+  96703 141.0
+

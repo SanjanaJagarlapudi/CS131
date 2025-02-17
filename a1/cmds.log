@@ -1,0 +1,27 @@
+
+  261  cd CS131
+  262  cd CS131
+  263  ls
+  264  cd a1
+  265  nano ~/.bashrc
+  266  source ~/.bashrc
+  267  l
+  268  w
+  269  mkdir FARE
+  272  ls
+  273  cd FARE
+  274  /home/sanjana_jagarlapudi/.local/bin/gdown 1fc3saVu2GtG3Rft3zI-VOOsZhaqcSyn3
+  275  grep ',151.0,239.0,' ~/2019-01-h1.csv | cut -d ',' -f 11 > FARE/151.0-239.0.txt
+  276  grep ',163.0,229.0,' ~/2019-01-h1.csv | cut -d ',' -f 11 > FARE/163.0-229.0.txt
+  306  paste -sd+ FARE/151.0-239.0.txt | bc -l | xargs -I {} echo "{} / $(wc -l < FARE/151.0-239.0.txt)" | bc -l > a1.txt
+  307  vim a1.txt
+  308  paste -sd+ FARE/163.0-229.0.txt | bc -l | xargs -I {} echo "{} / $(wc -l < FARE/163.0-229.0.txt)" | bc -l >> a1.txt
+  309  cat a1.txt
+  310  vim a1.txt
+  312  grep '2019-01-10' ~/2019-01-h1.csv | cut -d ',' -f 17 | sort -nr | head -1 >> a1.txt
+  313  cat a1.txt
+  314  vim a1.txt
+  315  cut -d ',' -f 9 ~/2019-01-h1.csv | sort | uniq -c | sort -nr | head -10 >> a1.txt
+  319  cat a1.txt
+  320  vim a1.txt
+  321  history > cmds.log
