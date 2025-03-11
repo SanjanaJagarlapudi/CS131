@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# trash - A simple file deletion tool, better and safer than rm
+TRASH_DIR="$HOME/.trash"
+
+# Create trash directory, if it doesn't already exist
+mkdir -p "$TRASH_DIR"
+
+# Handling different modes
+
+# First lets handle the listing mode (-l)
+if [[ "$1" == "-l" || "$1" == "--list" ]]; then #check the first argument
+    echo "Files in trash:" #if its -l, then list the directory contents 
+    ls -1 "$TRASH_DIR"
+    exit 0
+fi
+
+# handing emptying the trash
+if [[ "$1" == "-e" || "$1" == "--empty" ]]; then #check the first argument
+    rm -rf "$TRASH_DIR"/* #if first argument is -e, then empty the trash directory
+    echo "Trash emptied."
+    exit 0
+fi
+
+#handling restoring the trash
+if [[ "$1" == "-r" || "$1" == "--restore" ]]; then #check the first argument
+    if [[ -z "$2" ]]; then #$2 referes the second argument and -z checks if its empty 
+        echo "Error: No file specified for restoration."
+        exit 1
+    fi
+    
+    if [[ -f "$TRASH_DIR/$2" ]]; then #if the file exists in the trash, 
+        mv "$TRASH_DIR/$2" "$PWD" #then restore it
+        echo "Restored: $2 to current directory"
+    else
+        echo "File not found in trash: $2"
+    fi
+    exit 0
+fi
+#If the user did not provided any arguments, print out a useful message
+if [[ "$#" == 0 ]]; then
+    echo "Usage: trash [FILES...] or trash [-l|-e|-r FILENAME]"
+    echo "  -l, --list     List files in trash"
+    echo "  -e, --empty    Empty the trash"
+    echo "  -r, --restore  Restore file from trash to current directory"
+    exit 1
+fi
+
+# Main functionality: actually moving the files to the trash directory
+# Process each file
+for file in "$@"; do #looking at all the arguments
+    if [[ ! -e "$file" ]]; then # check if the file exists
+        echo "Error: $file does not exist."
+        continue
+    fi
+    
+    # Add timestamp to avoid conflicts and make it more organized
+    timestamp=$(date +%Y%m%d%H%M%S)
+    filename=$(basename "$file")
+    
+    # Move file to trash
+    mv "$file" "$TRASH_DIR/${filename}_${timestamp}"
+done
+
+echo "$# file(s) successfully moved to trash!"
