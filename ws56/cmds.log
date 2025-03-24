@@ -1,0 +1,16 @@
+  779  sed -n '/^2.0/p' 2019-01-h1.csv > vendor2.csv
+  780  wc vendor2.csv
+  781  echo "Task 1)" >> ws56.txt
+  783  echo "1)" >> ws56.txt
+  785  wc vendor2.csv >> ws56.txt
+  787  sed 's/[":-]//g' 2019-01-h1.csv > no-separators.csv
+  788  head -10 no-separators.csv
+  789  echo "2)" >> ws56.txt
+  790  head -10 no-separators.csv >> ws56.txt
+  791  echo "3)" >> ws56.txt
+  803  sed 's/\.[0-9]*//g' no-separators.csv > no-fractions.csv
+  804  head -10 no-fractions.csv >> ws56.txt
+  809  echo "Task 2)" >> ws56.txt
+  813  awk -F, '$17 >= 10.0 {num_of_tips[$14]++} END {for (tip in num_of_tips) print tip, num_of_tips[tip]}' 2019-01-h1.csv > temp.txt
+  814  awk -F, '$17 >= 10.0 {num_of_tips[$14]++} END {for (tip in num_of_tips) print tip, num_of_tips[tip]}' 2019-01-h1.csv > ws56.txt
+  820  awk -F',' '{num_of_tips[$14]++} END {for (tip in num_of_tips) print tip, num_of_tips[tip]}' 2019-01-h1.csv | sort -k2 -nr | head -20 >> ws56.txt
