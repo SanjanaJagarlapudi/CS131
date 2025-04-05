@@ -1,0 +1,34 @@
+Output of running "awk -f grader.awk grades.csv":
+
+#The output shows how the name, total score, average score, and status are printed
+for each student in the file. 
+#Each student's info is separated by a "~" symbol to make reading the output easier  
+
+
+Student Name:  Alice
+Total Score:  253
+Average Score:  84.3333
+Status:  Pass
+~
+Student Name:  Bob
+Total Score:  246
+Average Score:  82
+Status:  Pass
+~
+Student Name:  Charlie
+Total Score:  270
+Average Score:  90
+Status:  Pass
+~
+Student Name:  David
+Total Score:  195
+Average Score:  65
+Status:  Fail
+~
+Student Name:  Eve
+Total Score:  265
+Average Score:  88.3333
+Status:  Pass
+~
+The student with the top score is Charlie with score 270
+The student with the lowest Score is David with score 195

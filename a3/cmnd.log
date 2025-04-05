@@ -1,0 +1,4 @@
+ 1023  vim grader.awk
+ 1024  awk -f grader.awk grades.csv
+ 1025  cat awk -f grader.awk grades.csv > a3.txt
+ 1026  vim a3.txt
